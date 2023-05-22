@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/src/date_model.dart';
 import 'package:flutter_datetime_picker/src/datetime_picker_theme.dart'
     as datetimePickerTheme;
-import 'package:flutter_datetime_picker/src/i18n_model.dart';
+import 'package:flutter_datetime_picker/src/i18n_model.dart' as dateModel;
 
 export 'package:flutter_datetime_picker/src/date_model.dart';
 export 'package:flutter_datetime_picker/src/datetime_picker_theme.dart';
@@ -29,7 +29,7 @@ class DatePicker {
     DateChangedCallback? onChanged,
     DateChangedCallback? onConfirm,
     DateCancelledCallback? onCancel,
-    locale = LocaleType.en,
+    locale = dateModel.LocaleType.en,
     DateTime? currentTime,
     datetimePickerTheme.DatePickerTheme? theme,
   }) async {
@@ -64,7 +64,7 @@ class DatePicker {
     DateChangedCallback? onChanged,
     DateChangedCallback? onConfirm,
     DateCancelledCallback? onCancel,
-    locale = LocaleType.en,
+    locale = dateModel.LocaleType.en,
     DateTime? currentTime,
     datetimePickerTheme.DatePickerTheme? theme,
   }) async {
@@ -97,7 +97,7 @@ class DatePicker {
     DateChangedCallback? onChanged,
     DateChangedCallback? onConfirm,
     DateCancelledCallback? onCancel,
-    locale = LocaleType.en,
+    locale = dateModel.LocaleType.en,
     DateTime? currentTime,
     datetimePickerTheme.DatePickerTheme? theme,
   }) async {
@@ -131,7 +131,7 @@ class DatePicker {
     DateChangedCallback? onChanged,
     DateChangedCallback? onConfirm,
     DateCancelledCallback? onCancel,
-    locale = LocaleType.en,
+    locale = dateModel.LocaleType.en,
     DateTime? currentTime,
     datetimePickerTheme.DatePickerTheme? theme,
   }) async {
@@ -165,7 +165,7 @@ class DatePicker {
     DateChangedCallback? onChanged,
     DateChangedCallback? onConfirm,
     DateCancelledCallback? onCancel,
-    locale = LocaleType.en,
+    locale = dateModel.LocaleType.en,
     BasePickerModel? pickerModel,
     datetimePickerTheme.DatePickerTheme? theme,
   }) async {
@@ -205,7 +205,7 @@ class _DatePickerRoute<T> extends PopupRoute<T> {
   final DateChangedCallback? onChanged;
   final DateChangedCallback? onConfirm;
   final DateCancelledCallback? onCancel;
-  final LocaleType? locale;
+  final dateModel.LocaleType? locale;
   final datetimePickerTheme.DatePickerTheme theme;
   final BasePickerModel pickerModel;
 
@@ -261,7 +261,7 @@ class _DatePickerComponent extends StatefulWidget {
 
   final _DatePickerRoute route;
 
-  final LocaleType? locale;
+  final dateModel.LocaleType? locale;
 
   final BasePickerModel pickerModel;
 
@@ -524,11 +524,11 @@ class _DatePickerState extends State<_DatePickerComponent> {
   }
 
   String _localeDone() {
-    return i18nObjInLocale(widget.locale)['done'] as String;
+    return dateModel.i18nObjInLocale(widget.locale)['done'] as String;
   }
 
   String _localeCancel() {
-    return i18nObjInLocale(widget.locale)['cancel'] as String;
+    return dateModel.i18nObjInLocale(widget.locale)['cancel'] as String;
   }
 }
 
